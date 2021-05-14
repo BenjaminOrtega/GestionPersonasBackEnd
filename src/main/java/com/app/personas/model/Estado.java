@@ -20,7 +20,7 @@ public class Estado implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int idEstado;
+	private Integer idEstado;
 	
 	private String nombre;
 	

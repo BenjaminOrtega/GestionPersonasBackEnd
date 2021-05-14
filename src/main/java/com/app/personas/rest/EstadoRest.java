@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,8 +19,8 @@ public class EstadoRest {
 	@Autowired
 	private EstadoService estadoService;
 	
-	@GetMapping
-	private ResponseEntity<List<Estado>> getAllStates(){
-		return ResponseEntity.ok(estadoService.findAll());
+	@GetMapping("{idPais}")
+	private ResponseEntity<List<Estado>> getAllStatesByCountry(@PathVariable Long idPais) {
+		return ResponseEntity.ok(estadoService.findByPaisIdPais(idPais));
 	}
 }

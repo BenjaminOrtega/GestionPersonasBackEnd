@@ -23,6 +23,7 @@ public class EstadoService implements EstadoRepository{
 	public List<Estado> findAll() {
 		return estadoRepository.findAll();
 	}
+	
 
 	@Override
 	public List<Estado> findAll(Sort sort) {
@@ -160,6 +161,13 @@ public class EstadoService implements EstadoRepository{
 	public <S extends Estado> boolean exists(Example<S> example) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+
+	@Override
+	public List<Estado> findByPaisIdPais(Long idPais) {
+		// TODO Auto-generated method stub
+		return estadoRepository.findByPaisIdPais(idPais);
 	}
 
 }
