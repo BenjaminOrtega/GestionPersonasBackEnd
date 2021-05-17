@@ -12,10 +12,10 @@ import com.app.personas.model.Pais;
 import com.app.personas.service.PaisService;
 
 @RestController
-@RequestMapping("/pais/")
+@RequestMapping("/paises/")
 public class PaisRest {
 	
-	@Autowired
+	@Autowired()
 	private PaisService paisService;
 	
 	@GetMapping
