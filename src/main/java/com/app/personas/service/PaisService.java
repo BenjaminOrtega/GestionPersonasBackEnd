@@ -10,7 +10,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import com.app.personas.model.Pais;
+import com.app.personas.entity.Pais;
 import com.app.personas.repository.PaisRepository;
 
 @Service

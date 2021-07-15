@@ -1,30 +1,38 @@
-package com.app.personas.model;
+package com.app.personas.entity;
 
-import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "estado")
-public class Estado implements Serializable{
-	private static final long serialVersionUID = 1L;
+@Table(name = "persona")
+public class Persona {
+
 	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer idEstado;
+	private Long idPersona;
 	
 	private String nombre;
 	
-	@OneToOne
+	private String apellido;
+	
+	private int edad;
+	
+	@ManyToOne
 	@JoinColumn(name = "id_pais")
 	private Pais pais;
+	@ManyToOne
+	@JoinColumn(name = "id_estado")
+	private Estado estado;
+	
 }

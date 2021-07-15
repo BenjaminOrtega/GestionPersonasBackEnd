@@ -1,6 +1,5 @@
-package com.app.personas.model;
+package com.app.personas.entity;
 
-import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,26 +13,16 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "persona")
-public class Persona implements Serializable{
-
-	private static final long serialVersionUID = 1L;
-
+@Table(name = "estado")
+public class Estado {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int idPersona;
+	private Long idEstado;
 	
 	private String nombre;
-	
-	private String apellido;
-	
-	private int edad;
 	
 	@ManyToOne
 	@JoinColumn(name = "id_pais")
 	private Pais pais;
-	@ManyToOne
-	@JoinColumn(name = "id_estado")
-	private Estado estado;
-	
 }

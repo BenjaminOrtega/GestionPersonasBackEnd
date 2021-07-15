@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.app.personas.model.Pais;
+import com.app.personas.entity.Pais;
 import com.app.personas.service.PaisService;
 
 @RestController
@@ -18,7 +18,7 @@ public class PaisRest {
 	@Autowired()
 	private PaisService paisService;
 	
-	@GetMapping
+	@GetMapping()
 	private ResponseEntity<List<Pais>> getAllCountries() {
 		return ResponseEntity.ok(paisService.findAll());
 	}	

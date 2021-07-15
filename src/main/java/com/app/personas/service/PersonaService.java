@@ -10,7 +10,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import com.app.personas.model.Persona;
+import com.app.personas.entity.Persona;
 import com.app.personas.repository.PersonaRepository;
 
 @Service
@@ -92,7 +92,7 @@ public class PersonaService implements PersonaRepository{
 	@Override
 	public <S extends Persona> S save(S entity) {
 		// TODO Auto-generated method stub
-		return null;
+		return personaRepository.save(entity);
 	}
 
 	@Override

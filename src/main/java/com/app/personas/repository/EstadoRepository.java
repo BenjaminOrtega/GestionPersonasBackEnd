@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import com.app.personas.model.Estado;
+import com.app.personas.entity.Estado;
 
 public interface EstadoRepository extends JpaRepository<Estado, Long> {
 	
